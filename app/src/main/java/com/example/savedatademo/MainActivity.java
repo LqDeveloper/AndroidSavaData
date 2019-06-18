@@ -9,7 +9,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView textView1;
     TextView textView2;
-
+    TextView textView3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView2 = findViewById(R.id.file);
         textView2.setOnClickListener(this);
 
+        textView3 = findViewById(R.id.sqlLite);
+        textView3.setOnClickListener(this);
     }
 
     @Override
@@ -32,6 +34,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.file:
                 intent = new Intent(MainActivity.this, FileActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.sqlLite:
+                intent = new Intent(MainActivity.this, SqlLiteActivity.class);
                 startActivity(intent);
                 break;
         }
